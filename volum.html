@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcul Volum Cilindru</title>
+</head>
+<body>
+
+    <h1>Calcul Volum Cilindru</h1>
+
+    <p>Introduceți raza bazei (r): </p>
+    <input type="text" id="raza" placeholder="Raza">
+
+    <p>Introduceți înălțimea (H): </p>
+    <input type="text" id="inaltime" placeholder="Înălțimea">
+
+    <button onclick="calculeazaVolum()">Calculează Volumul</button>
+
+    <p id="rezultat"></p>
+
+    <script>
+        function calculeazaVolum()
+         {
+            var raza = document.getElementById("raza").value;
+            var inaltime = document.getElementById("inaltime").value;
+            
+            raza = parseFloat(raza);
+            inaltime = parseFloat(inaltime);
+            
+            if (isNaN(raza) || isNaN(inaltime)) {
+                alert("Te rog introduceți numere valide pentru rază și înălțime!");
+                return;
+            }
+            
+            var pi = 3.14;
+            var volum = (raza * raza) * pi * inaltime;
+ 
+            document.getElementById("rezultat").innerText = "Volumul cilindrului este: " + volum.toFixed(2) + " unități cubice.";
+        }
+    </script>
+
+</body>
+</html>
